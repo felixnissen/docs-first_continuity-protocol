@@ -1,5 +1,10 @@
 # Contributing
 
+## Licensing of contributions
+
+Unless explicitly stated otherwise, contributions intentionally submitted
+for inclusion in this repository are licensed under the Apache License 2.0.
+
 ## Required reading
 
 `AGENTS.md` first, then the reading order it names. Do not start work from an
