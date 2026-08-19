@@ -1,7 +1,9 @@
 # docs-first continuity protocol
 
-Private and unlicensed. Not open source, and not to be described as such until
-it has an OSI-approved license.
+Licensed under the Apache License 2.0.
+
+This repository is an extraction in progress and should be considered a
+technical preview until a versioned release is published.
 
 ## The problem, in one story
 
@@ -51,3 +53,14 @@ status document is right and this one is stale.
 
 `AGENTS.md`, then the reading order it names. The active task is always
 `docs/CURRENT_TASK.md`.
+
+## License
+
+This repository is licensed under the Apache License 2.0.
+
+Using the Docs-First Continuity Protocol does not cause a project's own
+documents, source code, or other artifacts to become licensed under
+Apache-2.0.
+
+Files copied or adapted from this repository remain subject to the terms
+of the Apache License 2.0.
