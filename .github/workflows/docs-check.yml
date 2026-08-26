@@ -1,0 +1,36 @@
+name: docs-check
+
+on:
+  pull_request:
+  push:
+    branches:
+      - contrib/**
+
+permissions:
+  contents: read
+
+jobs:
+  diff-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Reject whitespace errors in changed lines
+        shell: bash
+        run: |
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            git diff --check "${{ github.event.pull_request.base.sha }}" "${{ github.event.pull_request.head.sha }}"
+          else
+            git diff --check HEAD^ HEAD
+          fi
+
+      - name: Reject unresolved conflict markers
+        shell: bash
+        run: |
+          if git grep -n -E '^(<<<<<<<|=======|>>>>>>>)' -- ':!baseline/**'; then
+            echo "Unresolved merge-conflict marker found."
+            exit 1
+          fi
