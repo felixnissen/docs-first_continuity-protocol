@@ -4,6 +4,51 @@ Newest first. Append only: entries are never edited or reflowed, because other
 records cite them and because their value is that they record what was believed
 at the time.
 
+## 2026-08-26 — DFC-0001 verified and archived in the fork
+
+- Date: 2026-08-26
+- Author: felixnissen with ChatGPT acting as implementation/review assistant
+- Task: DFC-0001
+- Branch: `contrib/dfc-0001-spec-and-consistency`
+- Change: accepted the candidate C-01 through C-18 specification as the working
+  normative core of this fork, archived the completed task at
+  `docs/finished/DFC-0001_protocol-specification.md`, and restored the clean
+  active-task template. Upstream acceptance remains a separate maintainer
+  decision and is not implied by fork completion.
+- Verification: GitHub Actions `docs-check` run `32917249679` completed
+  successfully. It checked out full history, ran `git diff --check` on the
+  contribution diff, and rejected unresolved merge-conflict markers. The
+  previously completed bidirectional ledger/spec traceability and manual
+  baseline wording review remain recorded in the archived task.
+- Handoff: validator/tooling is now eligible to proceed as a separate task; do
+  not fold validator design back into the frozen DFC-0001 charter.
+- Signature: ChatGPT / felixnissen contribution branch
+
+## 2026-08-26 — DFC-0001 candidate specification and consistency pass
+
+- Date: 2026-08-26
+- Author: felixnissen with ChatGPT acting as implementation/review assistant
+- Task: DFC-0001
+- Branch: `contrib/dfc-0001-spec-and-consistency`
+- Change: wrote candidate `SPEC.md` requirements C-01 through C-18 with three
+  conformance levels and explicit checking means; refined `extraction/ledger.md`
+  so the baseline task-state model maps explicitly to C-09 and the sandbox
+  boundary maps separately to C-13 and C-14; removed the status-bearing `Work`
+  column from the identity-only task register; corrected current-reality claims
+  that still described the repository as private and unlicensed after Apache-2.0
+  licensing and public visibility had already landed; updated the repository map.
+- Evidence maturity: C-16, C-17 and the shared-trunk portion of C-18 remain
+  explicitly marked recent, preserving the extraction ledger's distinction
+  between long-used rules and rules added hours before extraction.
+- Verification: ledger-to-spec and spec-to-ledger traceability were manually
+  checked; changed Markdown was manually reviewed for link/fence consistency.
+  `git diff --check` had not yet been run at this checkpoint, so DFC-0001
+  correctly remained `In Progress` at that time.
+- Handoff: run the remaining checkout-based verification, review requirement
+  wording against the frozen baseline, then either amend the candidate before
+  acceptance or archive DFC-0001 and restore the active-task template.
+- Signature: ChatGPT / felixnissen contribution branch
+
 ## 2026-08-19 — Repository bootstrap from a frozen baseline
 
 - Date: 2026-08-19

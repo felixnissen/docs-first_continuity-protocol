@@ -26,6 +26,6 @@ by records that cannot be edited.
 
 ## Claims
 
-| Task ID | Title | Owner | Claimed | Work |
-| --- | --- | --- | --- | --- |
-| DFC-0001 | protocol specification, C-01 to C-18 | unassigned | 2026-08-19 | not started |
+| Task ID | Title | Owner | Claimed |
+| --- | --- | --- | --- |
+| DFC-0001 | protocol specification, C-01 to C-18 | unassigned | 2026-08-19 |

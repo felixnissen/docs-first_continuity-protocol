@@ -1,7 +1,7 @@
 # Project Brief
 
-Status: Approved direction for the bootstrap phase. Revised only by an
-explicit decision, never by a task in passing.
+Status: Approved direction for the bootstrap/specification phase. Revised only
+by an explicit decision, never by a task in passing.
 
 ## What this is
 
@@ -83,12 +83,18 @@ That evidence supports these claims and no more:
 
 The evidence report will publish its counting method before its counts.
 
+## Resolved repository decisions
+
+The repository is public and licensed under Apache License 2.0. Those facts are
+repository reality and are no longer open bootstrap decisions. They do not, by
+themselves, constitute a versioned protocol release or license unrelated adopter
+content under Apache-2.0.
+
 ## Open decisions
 
-These are not decided, and no task may assume them:
+These remain undecided, and no task may assume them:
 
-1. The project name, after trademark and registry checks.
-2. The license.
-3. Whether filenames are normative or only semantic roles are.
-4. Which case-study excerpts may be published, and with whose consent.
-5. When the repository becomes public.
+1. The final project/brand name, after trademark and registry checks.
+2. Whether filenames are normative or only semantic roles are.
+3. Which case-study excerpts may be published, and with whose consent.
+4. When the first versioned protocol release is ready to publish.
