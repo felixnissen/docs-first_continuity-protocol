@@ -1,8 +1,8 @@
 # Current Status
 
-Reality as of 2026-08-19. This document describes what exists, not what is
-planned. If it disagrees with the code or the tree, this document is wrong and
-must be corrected.
+Reality as of 2026-08-26 on the DFC-0001 contribution branch. This document
+describes what exists, not what is planned. If it disagrees with the code or
+the tree, this document is wrong and must be corrected.
 
 ## What exists
 
@@ -10,46 +10,45 @@ must be corrected.
 | --- | --- |
 | `baseline/acme-2026-08-19/` | Fifteen files, copied verbatim from tag `protocol-baseline-2026-08-19` in the source repository, verified byte for byte at extraction |
 | `baseline/README.md` | Provenance: source repository, revision, date, extractor, and what was deliberately not copied |
-| `extraction/ledger.md` | Twenty-eight classified rule groups, plus four rules marked as added hours before extraction |
-| This repository's own docs-first instance | Complete and operating: entry point, active task, workflow, brief, status, system document, journal, file map, identity register, collection indexes |
+| `extraction/ledger.md` | Thirty classified traceability rows. The bootstrap count was twenty-eight; DFC-0001 made the task-state row explicit and split the sandbox boundary into two independently checkable obligations |
+| `SPEC.md` | DFC-0001 candidate normative core, C-01 through C-18, with conformance levels and checking means |
+| This repository's own docs-first instance | Operating entry point, active task, workflow, brief, status, system document, journal, file map, identity register, collection indexes |
+| `LICENSE` | Apache License 2.0 |
+| Repository visibility | Public |
 
 ## What does not exist
 
-Nothing below has been started. None of it may be described as available.
+None of the following may be described as available yet:
 
-- The specification. No requirement is normative yet; `extraction/ledger.md`
-  names intended destinations such as C-01, but those requirements are not
-  written.
-- The templates, in any profile.
-- The conformance validator. This repository is checked by reading it.
-- The profiles: software, creative production, operations, research.
-- The case studies and the evidence report.
-- A license, a name decision, a public repository, a release of any kind.
+- Reference templates in a distributable protocol package.
+- The conformance validator or automated conformance report generator.
+- The profiles: software, creative production, operations, research, or
+  AI-systems.
+- The case studies and evidence report.
+- A versioned protocol release.
 
 ## Known gaps and risks
 
-- **The specification does not exist, so conformance cannot be claimed.** This
-  repository follows the baseline model; it does not yet conform to a written
-  standard, because there is none.
-- **Four rules in the baseline are hours old.** Path stability, collection
-  discoverability, tense-aware citation validation and trunk identity claims
-  were added on 2026-08-19 in response to real failures, and have not been used
-  long enough to be called hardened. `extraction/ledger.md` marks them.
-- **No tooling.** There is no link checker, no fence checker and no conformance
-  validator here. Verification is manual review until the validator exists.
-- **Evidence is not yet publishable.** The counting method has not been
-  written, no consent has been obtained for excerpts, and no journal material
-  has been anonymized.
+- **The specification is a candidate until DFC-0001 is reviewed and merged.**
+  Requirement identifiers C-01 through C-18 now exist on this branch, but no
+  released conformance claim should depend on them before that review.
+- **Four baseline rules were hours old at extraction.** C-16, C-17, and the
+  shared-trunk portion of C-18 preserve that lower evidence maturity explicitly.
+- **No validator yet.** The specification identifies validator-, git-history-,
+  and ritual-checked requirements, but verification is still manual.
+- **Evidence is not yet publishable.** The counting method has not been written,
+  no consent has been obtained for excerpts, and no journal material has been
+  anonymized.
 - **Twenty-two links inside `baseline/` do not resolve**, because the baseline
   is a partial verbatim copy whose links point into the source repository. This
-  is correct and must not be repaired. Any future link checker excludes
-  `baseline/`.
-- **The name is undecided**, which is why the task identity prefix `DFC`
-  encodes the descriptive method rather than a brand. Identities cannot be
-  renamed once cited.
+  is correct and future tooling must exclude `baseline/` from ordinary link
+  repair.
+- **The final project/brand name is undecided.** The descriptive repository name
+  and DFC identity prefix remain valid; task identities must not be renamed.
 
 ## Boundaries that hold
 
 - `baseline/` is never edited. Corrections belong in this project's documents.
 - The source repository does not depend on this one. The relation is one way.
-- This repository is private and unlicensed, and is therefore not open source.
+- The repository is public and licensed under Apache-2.0. Publication of a
+  versioned protocol release remains a separate explicit decision.
