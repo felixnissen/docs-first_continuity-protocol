@@ -1,6 +1,8 @@
 # Concepts Sandbox
 
 Discoverability: index. Every member of this directory is listed below.
+Authority: non-authoritative. Material in this collection cannot override current
+truth, approved direction, accepted decisions, or an active frozen charter.
 Member state: required. Every document declares date, updated date, owner and
 status.
 
