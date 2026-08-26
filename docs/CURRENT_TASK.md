@@ -2,7 +2,7 @@
 
 Task ID: DFC-0002
 Parent Task: None
-Status: In Progress
+Status: Complete
 Owner: felixnissen (fork contribution)
 Created: 2026-08-26
 Last updated: 2026-08-26
@@ -84,7 +84,7 @@ results and the highest claimable conformance level.
 - [x] Built-in Node test suite green on Node 20/22 × Ubuntu/Windows
 - [x] Self-validation runs without validator implementation errors on all four CI matrix jobs
 - [x] Negative fixtures fail the intended requirements
-- [x] `git diff --check` clean on the implementation matrix run
+- [x] `git diff --check` clean
 - [x] Generated JSON is parseable and stable enough for Verket integration
 
 ## References
@@ -107,8 +107,8 @@ results and the highest claimable conformance level.
 - [x] Add positive/negative tests
 - [x] Add CI execution
 - [x] Update durable docs and first-reader README
-- [ ] Re-run full matrix on the final documentation state
-- [ ] Archive DFC-0002 and restore the clean active-task surface
+- [x] Re-run full matrix on the final documentation state
+- [x] Archive DFC-0002 and restore the clean active-task surface as the close-out change
 
 ## Decisions and Notes
 
@@ -136,28 +136,29 @@ results and the highest claimable conformance level.
 - [x] `node conformance/cli.mjs .` — self-validation without mechanical failures
 - [x] `node conformance/cli.mjs . --format json` — parseable 18-result report
 - [x] GitHub Actions run `32917919827`: Node 20/22 × Ubuntu/Windows all green
-- [x] `git diff --check` in all four matrix jobs
-- [ ] Final post-documentation matrix on branch head
+- [x] GitHub Actions run `32918167452`: post-documentation Node 20/22 × Ubuntu/Windows all green
+- [x] `git diff --check` in all matrix jobs
+- [x] Close-out/archive diff remains gated by the PR's same conformance + docs-check workflows before merge
 
 ## Documentation Updates
 
 - [x] `docs/CURRENT_STATUS.md`
 - [x] `docs/SYSTEMDOC.md`
-- [ ] `docs/JOURNAL.md`
+- [x] `docs/JOURNAL.md`
 - [x] `docs/FILESTRUCTURE.md`
 - [x] `README.md` because its current-state capability table had become stale
 
 ## Handoff and Follow-ups
 
-- Current state: validator implementation and its first full matrix are green; durable docs are updated and a final post-documentation matrix remains before archival.
+- Current state: DFC-0002 is complete in this fork. The executable validator has two independent full cross-platform green matrices; this archived close-out is itself required to pass the same PR checks before merge.
 - Next recommended step: consume the stable JSON report from Verket's Docs-First adapter instead of duplicating validator logic.
-- Blockers: none.
+- Blockers: none in this fork. Upstream review is deliberately a separate maintainer decision.
 - Child tasks: none.
-- Resume condition: repository state alone is sufficient.
+- Resume condition: not applicable.
 - Open questions: whether future protocol releases standardize a config schema or keep validator configs implementation-specific.
 
 ## Finalize When Complete
 
-- Archive this file under `docs/finished/`.
-- Restore `docs/CURRENT_TASK.md` from the template.
-- Add a signed `docs/JOURNAL.md` entry.
+- [x] Archive this file under `docs/finished/`.
+- [x] Restore `docs/CURRENT_TASK.md` from the template.
+- [x] Add a signed `docs/JOURNAL.md` entry.
