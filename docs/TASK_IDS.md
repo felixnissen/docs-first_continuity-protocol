@@ -29,3 +29,4 @@ by records that cannot be edited.
 | Task ID | Title | Owner | Claimed |
 | --- | --- | --- | --- |
 | DFC-0001 | protocol specification, C-01 to C-18 | unassigned | 2026-08-19 |
+| DFC-0002 | conformance validator and report generator | felixnissen (fork contribution) | 2026-08-26 |
