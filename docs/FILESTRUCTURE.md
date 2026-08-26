@@ -19,7 +19,7 @@ docs-first_continuity-protocol/
 │   └── test/
 │       └── validator.test.mjs       positive/negative validator fixtures
 ├── docs/
-│   ├── CURRENT_TASK.md              active task surface
+│   ├── CURRENT_TASK.md              active task surface, clean after DFC-0002
 │   ├── template_CURRENT_TASK.md     charter form
 │   ├── TASK_WORKFLOW.md             states, freeze, routing, identity
 │   ├── PROJECT_BRIEF.md             approved direction and non-goals
@@ -33,7 +33,8 @@ docs-first_continuity-protocol/
 │   ├── backlog/                     non-activated proposals
 │   ├── paused/                      frozen parents awaiting a condition
 │   ├── finished/
-│   │   └── DFC-0001_protocol-specification.md
+│   │   ├── DFC-0001_protocol-specification.md
+│   │   └── DFC-0002_conformance-validator.md
 │   └── concepts_sandbox/            excluded ideas, explicitly non-authoritative
 ├── baseline/
 │   ├── README.md                    provenance and what was not copied
