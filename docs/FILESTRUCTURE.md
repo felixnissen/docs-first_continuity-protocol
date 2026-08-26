@@ -6,6 +6,7 @@ The repository map. Update it in the same change as the structure it describes.
 docs-first_continuity-protocol/
 ├── AGENTS.md                       entry point and operating rules
 ├── README.md                       what this is, for a first-time reader
+├── SPEC.md                         candidate normative core, C-01 to C-18
 ├── docs/
 │   ├── CURRENT_TASK.md             the active task, one per branch
 │   ├── template_CURRENT_TASK.md    the charter form
@@ -26,7 +27,7 @@ docs-first_continuity-protocol/
 │   ├── README.md                   provenance and what was not copied
 │   └── acme-2026-08-19/            fifteen files, verbatim, never edited
 └── extraction/
-    └── ledger.md                   baseline rules classified CORE/PROFILE/PROJECT
+    └── ledger.md                   baseline rules mapped CORE/PROFILE/PROJECT
 ```
 
 ## Conventions
@@ -46,7 +47,7 @@ records that may not be edited.
 
 ## Not yet present
 
-The specification, templates, profiles, conformance validator, case studies and
+Reference templates, profiles, the conformance validator, case studies and the
 evidence report do not exist. When they arrive they will sit beside `docs/` as
-`SPEC.md`, `templates/`, `profiles/`, `conformance/`, `examples/` and
-`case-studies/`, and this map must be updated in the same change.
+`templates/`, `profiles/`, `conformance/`, `examples/` and `case-studies/`, and
+this map must be updated in the same change.
