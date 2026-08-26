@@ -4,6 +4,40 @@ Newest first. Append only: entries are never edited or reflowed, because other
 records cite them and because their value is that they record what was believed
 at the time.
 
+## 2026-08-26 — DFC-0002 executable conformance validator
+
+- Date: 2026-08-26
+- Author: felixnissen with ChatGPT acting as implementation/review assistant
+- Task: DFC-0002
+- Branch: `contrib/conformance-validator-v1`
+- Change: implemented a dependency-free Node 20+ conformance library and CLI for
+  C-01 through C-18. A non-normative `continuity.config.json` maps concrete
+  project paths to semantic roles so current filenames do not become accidental
+  protocol requirements. Reports are available as human-readable text and
+  stable JSON with per-requirement results, mechanical failures, outstanding
+  evidence, spec digest, repository revision and Level 1/2/3 claimability.
+- Evidence boundary: v1 emits `pass`, `fail` and `manual`. Review-ritual and
+  git-history obligations remain `manual` unless explicit external evidence is
+  supplied; such evidence cannot override a deterministic mechanical failure.
+- Tests: eight positive/negative tests cover valid structural state, status
+  leakage and ordering in the task register, incomplete Ready charters, missing
+  non-authority boundaries, undiscoverable collections, external evidence and
+  stable report shape.
+- Self-check finding: the first CI run correctly rejected this repository's C-14
+  evidence because the concepts sandbox boundary, though strong in prose, did
+  not expose a simple explicit authority declaration. The collection README now
+  states `Authority: non-authoritative` and that it cannot override current
+  truth, approved direction, accepted decisions or a frozen charter. The
+  validator was not weakened into fuzzy prose guessing.
+- Verification: GitHub Actions run `32917919827` passed on Node 20 and 22 on
+  both Ubuntu and Windows, including tests, repository self-validation, JSON
+  parsing and `git diff --check`. Durable documentation was then updated; a
+  final post-documentation matrix remains the archival gate.
+- Handoff: after the final branch-head matrix is green, archive DFC-0002 and
+  restore the clean current-task surface. Verket can then consume the validator's
+  JSON contract rather than reimplementing Docs-First conformance rules.
+- Signature: ChatGPT / felixnissen contribution branch
+
 ## 2026-08-26 — DFC-0001 verified and archived in the fork
 
 - Date: 2026-08-26
