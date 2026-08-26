@@ -4,6 +4,30 @@ Newest first. Append only: entries are never edited or reflowed, because other
 records cite them and because their value is that they record what was believed
 at the time.
 
+## 2026-08-26 — DFC-0002 verified, archived and handed off
+
+- Date: 2026-08-26
+- Author: felixnissen with ChatGPT acting as implementation/review assistant
+- Task: DFC-0002
+- Branch: `contrib/conformance-validator-v1`
+- Change: completed DFC-0002, archived the frozen task at
+  `docs/finished/DFC-0002_conformance-validator.md`, restored the clean active
+  task template, updated the finished-archive declaration and repository map,
+  and left the validator as a reusable semantic-role tool rather than a set of
+  filename-specific checks.
+- Verification before archival: GitHub Actions run `32918167452` passed the
+  complete Node 20/22 × Ubuntu/Windows matrix after the durable docs and README
+  were updated. Every job passed validator tests, repository self-validation,
+  machine-readable JSON parsing and `git diff --check`.
+- Close-out gate: the archive/template/index commits are themselves subject to
+  the same PR `conformance` and `docs-check` workflows. The contribution must
+  not merge in this fork unless those final branch-head checks are green.
+- Handoff: the next integration consumer is Verket. It should invoke/consume
+  this validator's JSON contract and surface failures/manual evidence instead of
+  duplicating protocol rules in its own Doctor implementation. Upstream review
+  remains a separate maintainer decision.
+- Signature: ChatGPT / felixnissen contribution branch
+
 ## 2026-08-26 — DFC-0002 executable conformance validator
 
 - Date: 2026-08-26
