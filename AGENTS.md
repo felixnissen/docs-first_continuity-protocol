@@ -14,10 +14,11 @@ answered its own question.
 - Purpose: extract the hardened docs-first working model into an
   agent-neutral, domain-neutral protocol with a specification, templates and a
   conformance suite.
-- Current phase: bootstrap. The frozen baseline and the extraction ledger
-  exist. The specification, templates, profiles and validator do not.
-- Status: private, unlicensed. It is not open source until it has an
-  OSI-approved license, and saying otherwise would be inaccurate.
+- Current phase: specification. The frozen baseline and extraction ledger
+  exist, and DFC-0001 is producing the candidate C-01 through C-18
+  specification. Templates, profiles and validator do not yet exist.
+- Status: public and licensed under Apache License 2.0. No versioned protocol
+  release has been published yet.
 
 ## Start Here
 
@@ -131,5 +132,8 @@ sounds reasonable. That obligation applies to the repository itself.
 ## Safety
 
 - Never commit credentials, personal data or client material.
-- The repository stays private until a license and a name are decided.
-- Publication, releases and announcements require explicit approval.
+- The repository is public; never assume material committed here remains
+  private.
+- Apache-2.0 licensing of this repository does not license unrelated project
+  content that merely adopts the protocol.
+- Versioned releases and announcements require explicit approval.
