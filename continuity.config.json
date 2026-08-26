@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "project": "docs-first continuity protocol",
+  "entryPoint": "AGENTS.md",
+  "readOrder": [
+    "docs/CURRENT_TASK.md",
+    "docs/TASK_WORKFLOW.md",
+    "docs/PROJECT_BRIEF.md",
+    "docs/CONTRIBUTING.md",
+    "docs/CURRENT_STATUS.md",
+    "docs/SYSTEMDOC.md",
+    "docs/JOURNAL.md",
+    "docs/FILESTRUCTURE.md"
+  ],
+  "activeTask": "docs/CURRENT_TASK.md",
+  "taskRegister": "docs/TASK_IDS.md",
+  "finishedTasks": "docs/finished",
+  "nonAuthority": "docs/concepts_sandbox",
+  "authorities": {
+    "currentReality": "docs/CURRENT_STATUS.md",
+    "approvedDirection": "docs/PROJECT_BRIEF.md",
+    "history": "docs/JOURNAL.md",
+    "system": "docs/SYSTEMDOC.md"
+  },
+  "collections": [
+    "docs/adr",
+    "docs/backlog",
+    "docs/concepts_sandbox",
+    "docs/finished",
+    "docs/paused"
+  ],
+  "taskIdPattern": "^DFC-(\\d{4})$",
+  "ignore": [
+    "baseline"
+  ]
+}
