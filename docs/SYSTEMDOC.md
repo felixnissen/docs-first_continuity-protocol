@@ -42,6 +42,52 @@ exact mapping.
 | Future work | `docs/backlog/` | Non-activated proposals |
 | Excluded ideas | `docs/concepts_sandbox/` | Undecided concepts, never authority |
 
+## Executable conformance layer
+
+`SPEC.md` defines the obligations. `conformance/` is an implementation that
+turns the mechanically checkable portions into executable evidence without
+changing the protocol's semantic-role model.
+
+```text
+project repository
+      │
+      ├── continuity.config.json
+      │      maps local paths → semantic roles
+      │
+      ▼
+conformance/cli.mjs
+      │
+      ├── deterministic structural checks
+      ├── explicit manual/git-history evidence gaps
+      ├── optional external evidence input
+      │
+      ├── human text report
+      └── stable JSON report
+              │
+              ├── C-01 … C-18 results
+              ├── mechanical failures
+              ├── evidence still required
+              └── Level 1/2/3 claimability
+```
+
+The configuration file is **not normative protocol content**. It is a local
+adapter from a repository's filenames/collections to the semantic roles the
+protocol names. A different project can map different paths without changing
+C-01 through C-18.
+
+A static validator cannot truthfully prove every protocol obligation. For
+example, one-owner-per-truth and repository-only resumption require semantic
+review, while charter freeze and collision-resistant trunk allocation require
+history evidence. The validator therefore reports those obligations as
+`manual` until evidence is supplied. An external evidence file may resolve a
+manual obligation to pass/fail, but cannot override a deterministic mechanical
+failure.
+
+The validator report binds itself to the checked specification through a
+SHA-256 digest of `SPEC.md` and records the repository revision when Git is
+available. This lets CI and consumers such as orchestration/control-center tools
+show exactly which protocol text and repository state produced a result.
+
 ## Why the sandbox exists
 
 An idea has three possible destinations: an authoritative document, where it
@@ -96,19 +142,23 @@ scoped per branch because that is where version control already enforces it.
 
 ```text
 docs-first_continuity-protocol/
-├── AGENTS.md              entry point
-├── docs/                  this repository's own docs-first instance
-├── baseline/              frozen source model, never edited, never authority
-└── extraction/            classification of baseline rules into this project's
+├── AGENTS.md                 entry point
+├── SPEC.md                   normative C-01 through C-18 core
+├── continuity.config.json    this repo's non-normative role mapping
+├── conformance/              validator, CLI and tests
+├── docs/                     this repository's own docs-first instance
+├── baseline/                 frozen source model, never edited, never authority
+└── extraction/               classification/traceability from baseline to spec
 ```
 
-Three levels coexist and must not be confused:
+Four levels coexist and must not be confused:
 
 | Level | Meaning |
 | --- | --- |
-| `docs/` | This project's live working state. It must pass whatever conformance the specification eventually defines. |
-| `baseline/` | Provenance. Frozen, unedited, not authority for anything here. |
-| `extraction/` | The audit trail between the two. |
+| `SPEC.md` | Normative protocol obligations accepted in this fork. |
+| `conformance/` + config | Executable implementation/evidence mapping; tooling choices are not normative filenames. |
+| `docs/` | This project's live working state and durable self-hosted continuity records. |
+| `baseline/` + `extraction/` | Frozen provenance plus the auditable mapping from source rules to the protocol core. |
 
-Once templates exist they will form a fourth level: shipped artefacts carrying
+Once templates exist they form another shipped-artifact layer carrying
 placeholders, validated in template mode rather than as live state.
