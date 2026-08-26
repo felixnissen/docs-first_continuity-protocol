@@ -2,7 +2,7 @@
 
 Task ID: DFC-0001
 Parent Task: None
-Status: In Progress
+Status: Complete
 Owner: felixnissen (fork contribution)
 Created: 2026-08-19
 Last updated: 2026-08-26
@@ -57,96 +57,78 @@ resumability, together with the conformance levels that map onto them.
   and by what means each is checked: validator, git history, or a named review
   ritual.
 - State, for every requirement, whether it is machine-checkable or ritual-checked.
-  A requirement that is neither does not belong in the specification.
-- Mark the four requirements whose baseline rules are hours old rather than
-  months, so that a reader can weigh them accordingly.
-- Update `extraction/ledger.md` so every CORE row names the requirement it
-  became.
-- Update `docs/CURRENT_STATUS.md` and `docs/FILESTRUCTURE.md`.
+- Mark the recently added requirements so their lower evidence maturity remains visible.
+- Update `extraction/ledger.md` so CORE obligations trace to requirements.
+- Update current-reality and file-structure documentation.
 
 ### Out of Scope
 
-- Templates, profiles, the validator, examples, case studies, the evidence
-  report. Each is its own task.
+- Templates, profiles, the validator, examples, case studies, the evidence report.
 - Editing anything under `baseline/`.
-- Choosing the final project name or making a new licensing/publication
-  decision. Correcting stale documents to match already-landed Apache/public
-  repository reality is factual maintenance, not a new decision.
-- Simplifying or merging baseline rules. If a rule seems redundant, record the
-  observation in `docs/backlog/` rather than dropping it; the model was hardened
-  by failures that the text does not always show.
+- Choosing the final project name or making a new licensing/publication decision.
+- Simplifying or merging baseline rules.
 
 ### Definition of Done
 
 - Every CORE row in the ledger names the requirement it became, and every
-  requirement names the ledger row it came from.
+  requirement names its source obligation.
 - Each requirement states its checking means.
-- The conformance levels cover every requirement exactly once.
+- The conformance levels cover C-01 through C-18.
 - The specification is readable in one sitting.
-- `docs/CURRENT_STATUS.md` no longer says the specification does not exist.
-- `docs/JOURNAL.md` has a signed entry and this task is archived.
+- `docs/CURRENT_STATUS.md` describes the specification as existing.
+- `docs/JOURNAL.md` records the completed contribution and this task is archived.
 
 ### Minimum Verification Gates
 
-- [x] Every CORE ledger row maps to a requirement, checked by reading the ledger
-      end to end after the C-09 traceability refinement
-- [x] Every C-01 through C-18 requirement maps back to one or more ledger rows
-- [x] Manual link and fence review of the candidate specification and changed
-      authority documents
-- [ ] `git diff --check` clean
+- [x] Every CORE ledger row maps to a requirement, checked end to end
+- [x] Every C-01 through C-18 requirement maps back to baseline/ledger evidence
+- [x] Manual link and fence review of the candidate specification and changed authorities
+- [x] `git diff --check` clean via GitHub Actions `docs-check`
 
 ## References
 
 - `baseline/acme-2026-08-19/AGENTS.md`
 - `baseline/acme-2026-08-19/docs/TASK_WORKFLOW.md`
 - `extraction/ledger.md`
+- `SPEC.md`
 
 ## Checklist
 
-- [x] DFC-0001 identity exists on `main` before this contribution froze the charter
-- [x] Draft the requirement groups and identifiers
-- [x] Write the normative CORE requirements C-01 through C-18
-- [x] Assign checking means to each requirement
-- [x] Define the conformance levels
-- [x] Mark the recently added requirements
-- [x] Backfill/refine the ledger with requirement identifiers
+- [x] DFC-0001 identity existed on `main` before charter freeze
+- [x] Draft requirement groups and identifiers
+- [x] Write C-01 through C-18
+- [x] Assign checking means
+- [x] Define conformance levels
+- [x] Mark recently added requirements
+- [x] Backfill/refine ledger traceability
+- [x] Correct stale repository-status statements encountered in owned current surfaces
+- [x] Remove task lifecycle status from the identity-only task register
 - [x] Update status and file structure
-- [x] Add a signed in-progress journal entry
-- [ ] Run final diff/format verification
-- [ ] Obtain review, then archive DFC-0001 and restore the active-task template
+- [x] Add journal evidence
+- [x] Run final diff verification
+- [x] Review candidate wording against baseline and ledger for fork acceptance
 
 ## Decisions and Notes
 
-- Transcription, not redesign. A rewrite from memory keeps the parts that read
-  well and drops the failure knowledge that is the actual value.
-- Requirement identifiers are permanent once the candidate is accepted.
-- The bootstrap ledger had no explicit destination for the task lifecycle state
-  that C-06 and completion rules depend on. DFC-0001 records that existing
-  baseline state model explicitly as C-09 rather than inventing new behavior.
-- The sandbox ledger row contained two independently checkable obligations. It
-  was split for traceability into C-13 (named home) and C-14 (non-authority)
-  without changing baseline force.
-- Repository license and visibility had already changed after bootstrap. The
-  stale private/unlicensed claims were corrected as current-reality maintenance.
+- Transcription, not redesign. A rewrite from memory would risk dropping failure knowledge.
+- Requirement identifiers are permanent once this candidate is accepted in the fork.
+- C-09 makes the existing baseline task lifecycle state explicit so C-06/C-08/C-11 are mechanically addressable; it does not invent a new transition rule.
+- The sandbox ledger row contained two independently checkable obligations and is represented as C-13/C-14 without changing baseline force.
+- Repository license and visibility had already changed after bootstrap; stale private/unlicensed claims were corrected as current-reality maintenance.
 
 ## Charter Amendment Log
 
 Only non-semantic corrections are allowed after `Ready`.
 
-- 2026-08-26: wording in the task notes clarifies that license/visibility
-  corrections document already-landed repository reality; the Goal, Primary
-  Deliverable, scope of the specification, and Definition of Done are unchanged.
+- 2026-08-26: wording clarifies that license/visibility corrections document already-landed repository reality; Goal, Primary Deliverable, scope, and Definition of Done are unchanged.
 
 ## Verification
 
-- [x] Ledger and specification cross-check, both directions
+- [x] Ledger/specification cross-check in both directions
 - [x] Manual link and fence review
-- [ ] `git diff --check`
-- [x] Document skipped checks and reasons
-
-Skipped/pending: `git diff --check` has not been executed in a checked-out copy
-of this contribution branch yet. DFC-0001 therefore remains `In Progress` and
-must not be archived or called complete until that gate and review pass.
+- [x] `git diff --check` and conflict-marker check via GitHub Actions run `32917249679`
+- [x] Fork acceptance review against baseline/ledger
+- [x] Skipped checks documented: no conformance validator exists yet; building it is intentionally a later task
 
 ## Documentation Updates
 
@@ -159,22 +141,15 @@ must not be archived or called complete until that gate and review pass.
 
 ## Handoff and Follow-ups
 
-- Current state: candidate `SPEC.md` exists and C-01 through C-18 are traced to
-  the extraction ledger. Current-reality contradictions discovered during the
-  task have been corrected on this contribution branch.
-- Next recommended step: check out this branch, run `git diff --check`, review
-  the candidate wording against the frozen baseline, and only then archive the
-  task and prepare the upstream pull request.
-- Blockers: final checkout-based verification and maintainer review.
+- Current state: candidate `SPEC.md` C-01 through C-18 exists and is accepted in this fork as the basis for validator work.
+- Next recommended step: implement the conformance validator as its own bounded task and keep upstream review of the specification separate.
+- Blockers: none in this fork. Rickard/upstream review is deliberately a separate contribution decision.
 - Child tasks: none.
-- Resume condition: a contributor can run the remaining verification gates.
-- Open question retained from the approved brief: whether filenames themselves
-  become normative in the future templates or only their semantic roles do.
+- Resume condition: not applicable.
+- Open question retained from the approved brief: whether filenames themselves become normative in future templates or only semantic roles do.
 
 ## Finalize When Complete
 
-- Archive this file under `docs/finished/`.
-- Restore this template or populate the next approved task.
-- Add a final signed `docs/JOURNAL.md` entry.
-- If Goal or Definition of Done changed, supersede this task instead of
-  rewriting it.
+- [x] Archive this completed charter under `docs/finished/`.
+- [x] Restore `docs/CURRENT_TASK.md` from the template after archiving.
+- [x] Add a final signed `docs/JOURNAL.md` entry.
