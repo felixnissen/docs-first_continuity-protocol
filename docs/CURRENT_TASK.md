@@ -2,7 +2,7 @@
 
 Task ID: DFC-0002
 Parent Task: None
-Status: Ready
+Status: In Progress
 Owner: felixnissen (fork contribution)
 Created: 2026-08-26
 Last updated: 2026-08-26
@@ -81,11 +81,11 @@ results and the highest claimable conformance level.
 
 ### Minimum Verification Gates
 
-- [ ] Built-in Node test suite green
-- [ ] Self-validation runs without validator implementation errors
-- [ ] Negative fixtures fail the intended requirements
-- [ ] `git diff --check` clean
-- [ ] Generated JSON is parseable and stable enough for Verket integration
+- [x] Built-in Node test suite green on Node 20/22 × Ubuntu/Windows
+- [x] Self-validation runs without validator implementation errors on all four CI matrix jobs
+- [x] Negative fixtures fail the intended requirements
+- [x] `git diff --check` clean on the implementation matrix run
+- [x] Generated JSON is parseable and stable enough for Verket integration
 
 ## References
 
@@ -93,51 +93,64 @@ results and the highest claimable conformance level.
 - `extraction/ledger.md`
 - `docs/TASK_WORKFLOW.md`
 - `docs/TASK_IDS.md`
+- `continuity.config.json`
+- `conformance/lib.mjs`
+- `conformance/cli.mjs`
 
 ## Checklist
 
-- [ ] Define non-normative semantic-role config schema
-- [ ] Implement file/task/register/collection checks
-- [ ] Implement requirement result + level calculation
-- [ ] Implement text and JSON CLI output
-- [ ] Add self-validation config
-- [ ] Add positive/negative tests
-- [ ] Add CI execution
-- [ ] Update durable docs
-- [ ] Verify and archive
+- [x] Define non-normative semantic-role config schema
+- [x] Implement file/task/register/collection checks
+- [x] Implement requirement result + level calculation
+- [x] Implement text and JSON CLI output
+- [x] Add self-validation config
+- [x] Add positive/negative tests
+- [x] Add CI execution
+- [x] Update durable docs and first-reader README
+- [ ] Re-run full matrix on the final documentation state
+- [ ] Archive DFC-0002 and restore the clean active-task surface
 
 ## Decisions and Notes
 
 - The validator maps semantic roles to project paths; config filenames and
   mapped filenames are tooling choices, not protocol requirements.
-- A result is one of `pass`, `fail`, `manual`, or `not_applicable`. Only `pass`
-  satisfies a requirement for an automated conformance claim; `manual` remains
+- A result is one of `pass`, `fail`, or `manual` in v1. A manual result remains
   an explicit unmet evidence obligation until separately supplied/reviewed.
+- External evidence may resolve `manual` to `pass`/`fail`; it cannot override a
+  deterministic mechanical failure.
 - V1 prefers deterministic conservative checks over heuristic false confidence.
+- Self-validation initially exposed that the sandbox's authority boundary was
+  semantically strong but unnecessarily implicit for tooling. Its README now
+  includes an explicit `Authority: non-authoritative` declaration while
+  retaining the stronger prose boundary.
 
 ## Charter Amendment Log
 
--none
+- 2026-08-26: implementation note narrowed v1's emitted status vocabulary to
+  `pass`, `fail`, and `manual`; this does not change Goal, deliverable, scope,
+  Definition of Done, or the rule that only evidenced passes support a claim.
 
 ## Verification
 
-- [ ] `node --test conformance/test/*.test.mjs`
-- [ ] `node conformance/cli.mjs .`
-- [ ] `node conformance/cli.mjs . --format json`
-- [ ] GitHub Actions
-- [ ] `git diff --check`
+- [x] `npm test` — eight positive/negative validator tests
+- [x] `node conformance/cli.mjs .` — self-validation without mechanical failures
+- [x] `node conformance/cli.mjs . --format json` — parseable 18-result report
+- [x] GitHub Actions run `32917919827`: Node 20/22 × Ubuntu/Windows all green
+- [x] `git diff --check` in all four matrix jobs
+- [ ] Final post-documentation matrix on branch head
 
 ## Documentation Updates
 
-- [ ] `docs/CURRENT_STATUS.md`
-- [ ] `docs/SYSTEMDOC.md`
+- [x] `docs/CURRENT_STATUS.md`
+- [x] `docs/SYSTEMDOC.md`
 - [ ] `docs/JOURNAL.md`
-- [ ] `docs/FILESTRUCTURE.md`
+- [x] `docs/FILESTRUCTURE.md`
+- [x] `README.md` because its current-state capability table had become stale
 
 ## Handoff and Follow-ups
 
-- Current state: task identity DFC-0002 is claimed on `main`; implementation is beginning on this branch.
-- Next recommended step: implement deterministic semantic-role checks before adding UI/integration consumers.
+- Current state: validator implementation and its first full matrix are green; durable docs are updated and a final post-documentation matrix remains before archival.
+- Next recommended step: consume the stable JSON report from Verket's Docs-First adapter instead of duplicating validator logic.
 - Blockers: none.
 - Child tasks: none.
 - Resume condition: repository state alone is sufficient.
