@@ -12,6 +12,7 @@ what was produced and what was verified, at the time. Current behaviour lives in
 Cancelled and superseded tasks are archived here too, with their final status
 and a link to whatever replaced them.
 
-The archive currently contains completed DFC-0001 at
-`DFC-0001_protocol-specification.md`. Future members follow the same immutable
+The archive currently contains completed DFC-0001 and DFC-0002 at
+`DFC-0001_protocol-specification.md` and
+`DFC-0002_conformance-validator.md`. Future members follow the same immutable
 Task-ID-based naming convention.
